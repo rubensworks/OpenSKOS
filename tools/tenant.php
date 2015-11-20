@@ -83,7 +83,8 @@ switch ($action) {
 			'email' => $OPTS->email,
 			'name' => $OPTS->name,
 			'password' => new Zend_Db_Expr('MD5('.$model->getAdapter()->quote($password).')'),
-			'tenant' => $OPTS->code,
+            'tenant' => $OPTS->code,
+            'eppn' => $OPTS->code,
 			'type' => OpenSKOS_Db_Table_Users::USER_TYPE_BOTH,
             'role' => OpenSKOS_Db_Table_Users::USER_ROLE_ADMINISTRATOR,
 		))->save();
